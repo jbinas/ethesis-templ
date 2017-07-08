@@ -2,6 +2,7 @@
 The latex template for my PhD thesis at ETH Zurich.
 
 Distributed under the MIT License
+
 Copyright (c) 2017 Jonathan Binas
 
 
@@ -9,7 +10,7 @@ Copyright (c) 2017 Jonathan Binas
 
 The jb-thesis class provides some carefully designed typographic and stylistic features, such as hanging section numbers and illustrated part headers. See the compiled example.pdf for an overview.
 
-The only part that's specific to ETH Zurich is the title page, so the class can easily be used for any other publication by redefining the maketitle command.
+The only part that's specific to ETH Zurich is the title page, so the class can easily be used with any other publication by redefining the maketitle command.
 
 
 # Prerequisites
