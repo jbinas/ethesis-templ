@@ -1,0 +1,115 @@
+\documentclass[b5paper,widemargins,twoside,printrev]{jb-thesis}
+\usepackage[T1]{fontenc}
+\usepackage[charter, uppercase=upright]{mathdesign}
+\usepackage[semibold,type1]{sourcesanspro}
+\usepackage{amsmath, amsthm}
+\usepackage{mathtools}
+\usepackage{algorithm2e}
+\usepackage{color}
+\usepackage{upgreek}
+\usepackage{graphicx, xcolor}
+\usepackage{tikzpagenodes}
+\usepackage{cleveref}
+\usepackage{blindtext}
+
+\input{common.tex}
+
+
+% biblatex
+\usepackage[
+    refsection=part,
+    natbib,
+    style=nature,
+    citestyle=authoryear-comp,
+    backend=biber,
+    uniquename=false,
+]{biblatex}
+
+% adjust citation and bibliography commands
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+\defbibheading{bibliography}[\bibname]{%
+    \chapter*{#1}%
+    \addcontentsline{toc}{chapter}{\numberline{}#1}%
+    \markboth{#1}{#1}
+}
+\addbibresource{bibliography.bib}
+\setcounter{tocdepth}{1}
+%
+
+% specify your details...
+\degree{{\sc Doctor of Sciences} of ETH Zurich}
+\degreeabbr{Dr. sc. ETH Zurich}
+\gradyear{2017}
+
+\author{Jonathan Binas}
+\acadtitle{MSc. ETH Zurich}
+\born{1/1/2017}
+\citizen{La La Land}
+
+
+\title{Brain-Inspired Models and Systems \\[0.7ex] for Distributed Computation}
+
+\examiners{
+    Prof. Dr. Abraham Bebraham \\
+    Prof. Dr. X. Y. Zebraham
+}
+
+\date{\today}
+
+
+% ---
+\begin{document}
+
+ \begin{preliminary}
+    \maketitle
+    \tableofcontents
+    % \include{abstract}
+ \end{preliminary}
+
+ % you may or may not want to use parts to structure your thesis
+ \part{Lorem Ipsum}
+
+ % generate some random content...
+ \blinddocument
+ 
+ % the partextra command allows for arbitrary objects to be placed
+ % on the part title page, here's an example:
+ \setpartextra{
+     \begin{tikzpicture}[remember picture, overlay]
+	 \node[inner sep=0pt, yshift=-1.8in] at (current page text area) {
+	     \includegraphics[scale=0.7]{neuron45c.png}};
+     \end{tikzpicture}
+ }
+
+ % the partextra content will be applied to the subsequent part
+ \part{Computing~with~imprecise and~noisy~substrates}
+
+ % add an unnumbered section
+ \mbox{}
+ \section*{Introduction}
+
+ Due to their organic nature, no two cells of a biological system, and therefore no two processing units of a brain, behave exactly the same.
+ Signals are communicated electrically, chemically, on a molecular basis, and even mechanically, through the action of ion channels, whereby all of these processes are influenced by external factors, such as temperature, the abundance of various substances, and various sources of noise \citep{shadlen1994noise}.
+
+ % let's add some math
+ \section{Formal derivation}
+
+ It is now easy to see that the state $\tilde{x}^\mathsf{b}$ corresponds to state $x^\mathsf{b}$ of the original model, since
+ %
+ \begin{align}
+     \tilde{x}^\mathsf{b}_k &= \sigma\left(\sum_{j<k} w_{kj} x^\mathsf{f}_j + \sum_{j>k} \tilde{w}_{kj} (x^\mathsf{f}_j + \Delta x_j) + b_k\right) \\
+	&=  \sigma\left(\sum_{j<k} w_{kj} x^\mathsf{f}_j + \sum_{j>k} \tilde{w}_{kj} x^\mathsf{b}_j + b_k\right) = x^\mathsf{b}_k\,.
+     \label{eqn:random1}
+ \end{align}
+ %
+ Analogously to the original derivation, it can be shown that the first and the second forward passes, as well as the subsequent backward pass do not increase the system energy.
+
+
+
+ % print the bibliography
+ \printbibliography
+
+
+\end{document}
+
+
