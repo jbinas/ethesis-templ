@@ -639,13 +639,17 @@
 }
 
 \def\@spart#1{%
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     {\huge\sffamily\bfseries#1\par}}%
+    \addcontentsline{toc}{part}{#1}%
+    \markboth{#1}{}
+    \vspace*{50\p@}%
+    {\parindent \z@ \raggedright
+	\normalfont
+	\interlinepenalty\@M
+	\huge\sffamily\bfseries #1\par\nobreak
+	\vskip 40\p@
+    }
     \partextra%
     \def\partextra{}%
-    \@endpart%
 }
 
 

@@ -50,4 +50,5 @@ The class supports printing of the current git revision (see example.pdf). This 
  * gitinfo2 package
 
 needs to be present, and the post-{commit,checkout,merge} hook from http://ctan.mirror.rafal.ca/macros/latex/contrib/gitinfo2/post-xxx-sample.txt should be added to your .git/hooks/ directory.
+The feature is activated by setting the printrev option (print revision on all pages) or the printrevtitle option (print on title page only) when loading the class.
 

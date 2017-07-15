@@ -17,7 +17,7 @@
 
 % biblatex
 \usepackage[
-    refsection=part,
+    %refsection=part,
     natbib,
     style=nature,
     citestyle=authoryear-comp,
@@ -28,8 +28,7 @@
 % adjust citation and bibliography commands
 \preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 \defbibheading{bibliography}[\bibname]{%
-    \chapter*{#1}%
-    \addcontentsline{toc}{chapter}{\numberline{}#1}%
+    \part*{#1}%
     \markboth{#1}{#1}
 }
 \addbibresource{bibliography.bib}
